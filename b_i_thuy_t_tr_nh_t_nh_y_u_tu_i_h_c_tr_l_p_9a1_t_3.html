@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tình Yêu Tuổi Học Trò — Lớp 9A1 Tổ 3</title>
+  <!-- Tải Tailwind CSS qua CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phông chữ tiếng Việt hiện đại & nghệ thuật -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,600&family=Playfair+Display:ital,wght@0,600;0,700;1,500;1,600&display=swap" rel="stylesheet" />
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Be Vietnam Pro"', 'sans-serif'],
+            serif: ['"Playfair Display"', 'serif'],
+          },
+          colors: {
+            twilight: {
+              950: '#120d26',
+              900: '#1d153d',
+              800: '#2d1f5e',
+            },
+            sakura: {
+              300: '#fda4af',
+              400: '#fb7185',
+              500: '#f43f5e',
+            },
+            peach: {
+              300: '#fdba74',
+              400: '#fb923c',
+            },
+            lavender: {
+              300: '#d8b4fe',
+              400: '#c084fc',
+              500: '#a855f7',
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    /* ==========================================================================
+       1. THIẾT LẬP NỀN THANH XUÂN RỰC RỠ & BIẾN MÀU CHỦ ĐẠO
+       ========================================================================== */
+    :root {
+      --glass-bg: rgba(255, 255, 255, 0.085);
+      --glass-bg-strong: rgba(24, 17, 52, 0.72);
+      --glass-border: rgba(255, 255, 255, 0.22);
+      --glass-highlight: rgba(255, 228, 235, 0.35);
+    }
+
+    * {
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Be Vietnam Pro', sans-serif;
+      color: #fff8fb;
+      background: radial-gradient(circle at 15% 15%, #5b2149 0%, #2a194d 38%, #151233 75%, #0d0b22 100%);
+      user-select: none;
+    }
+
+    /* Dải cực quang / ruy băng ánh sáng chuyển động mềm mại phía sau */
+    .aurora-layer {
+      position: fixed;
+      inset: -20%;
+      z-index: 0;
+      pointer-events: none;
+      background:
+        radial-gradient(ellipse 55% 40% at 20% 25%, rgba(251, 113, 133, 0.28), transparent 70%),
+        radial-gradient(ellipse 50% 45% at 82% 20%, rgba(192, 132, 252, 0.26), transparent 70%),
+        radial-gradient(ellipse 60% 45% at 75% 82%, rgba(251, 146, 60, 0.22), transparent 70%),
+        radial-gradient(ellipse 45% 45% at 22% 80%, rgba(99, 102, 241, 0.25), transparent 70%);
+      filter: blur(36px);
+      animation: auroraDrift 18s ease-in-out infinite alternate;
+    }
+
+    @keyframes auroraDrift {
+      0% { transform: scale(1) translate(0px, 0px) rotate(0deg); }
+      50% { transform: scale(1.06) translate(18px, -14px) rotate(2deg); }
+      100% { transform: scale(1.02) translate(-16px, 16px) rotate(-2deg); }
+    }
+
+    /* ==========================================================================
+       2. HIỆU ỨNG GLASSMORPHISM & THẺ TƯƠNG TÁC 3D
+       ========================================================================== */
+    .glass-card {
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.05) 100%);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--glass-border);
+      box-shadow:
+        0 18px 45px -12px rgba(8, 5, 24, 0.55),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.26);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+                  border-color 0.35s ease,
+                  box-shadow 0.35s ease;
+    }
+
+    .glass-card:hover {
+      border-color: rgba(253, 164, 175, 0.48);
+      box-shadow:
+        0 24px 55px -12px rgba(244, 63, 94, 0.24),
+        inset 0 1px 0 0 rgba(255, 255, 255, 0.38);
+    }
+
+    .glass-pill {
+      background: rgba(20, 14, 46, 0.62);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    }
+
+    /* Hiệu ứng chữ gradient thanh xuân tỏa sáng */
+    .gradient-title {
+      background: linear-gradient(120deg, #fff1f2 0%, #fda4af 28%, #fdba74 58%, #e9d5ff 85%, #ffffff 100%);
+      background-size: 220% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: gradientShine 7s ease-in-out infinite;
+      filter: drop-shadow(0 6px 24px rgba(251, 113, 133, 0.28));
+    }
+
+    @keyframes gradientShine {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    /* Nút bấm phát sáng & hiệu ứng vệt sáng chạy qua (shimmer) */
+    .btn-glow {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f43f5e 0%, #ec4899 45%, #a855f7 100%);
+      box-shadow: 0 10px 28px -4px rgba(244, 63, 94, 0.52);
+      transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .btn-glow::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -75%;
+      width: 50%;
+      height: 200%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+      transform: rotate(25deg);
+      animation: btnShimmer 3.6s infinite;
+    }
+
+    @keyframes btnShimmer {
+      0% { left: -75%; }
+      45%, 100% { left: 135%; }
+    }
+
+    .btn-glow:hover {
+      transform: translateY(-2px) scale(1.03);
+      box-shadow: 0 16px 36px -4px rgba(244, 63, 94, 0.68);
+    }
+
+    .btn-glow:active {
+      transform: translateY(0) scale(0.98);
+    }
+
+    /* ==========================================================================
+       3. CHUYỂN SLIDE 3D PERSPECTIVE & STAGGERED ENTRANCE ANIMATIONS
+       ========================================================================== */
+    .slides-viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      perspective: 1400px;
+      z-index: 10;
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      padding: 4.5rem 1.25rem 5.25rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate3d(60px, 0, -90px) rotateY(-6deg) scale(0.95);
+      transition:
+        opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.75s cubic-bezier(0.22, 1, 0.36, 1),
+        visibility 0.65s;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: rgba(251, 113, 133, 0.45) transparent;
+    }
+
+    @media (min-width: 768px) {
+      .slide {
+        padding: 4.75rem 2.75rem 5.5rem 2.75rem;
+      }
+    }
+
+    .slide.prev-exit {
+      transform: translate3d(-60px, 0, -90px) rotateY(6deg) scale(0.95);
+    }
+
+    .slide.active {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 0) rotateY(0deg) scale(1);
+    }
+
+    /* Hiệu ứng xuất hiện lần lượt cho các phần tử bên trong slide đang active */
+    .slide .stagger-item {
+      opacity: 0;
+      transform: translateY(22px) scale(0.98);
+      transition:
+        opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
+        transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .slide.active .stagger-item {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .slide.active .delay-1 { transition-delay: 0.08s; }
+    .slide.active .delay-2 { transition-delay: 0.16s; }
+    .slide.active .delay-3 { transition-delay: 0.24s; }
+    .slide.active .delay-4 { transition-delay: 0.32s; }
+    .slide.active .delay-5 { transition-delay: 0.40s; }
+    .slide.active .delay-6 { transition-delay: 0.48s; }
+
+    /* Hiệu ứng lơ lửng nhẹ cho huy hiệu & vật trang trí */
+    @keyframes floatSlow {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-9px) rotate(1.5deg); }
+    }
+
+    .animate-float {
+      animation: floatSlow 5.5s ease-in-out infinite;
+    }
+
+    @keyframes pulseRing {
+      0% { transform: scale(0.95); opacity: 0.7; }
+      70% { transform: scale(1.22); opacity: 0; }
+      100% { transform: scale(1.22); opacity: 0; }
+    }
+
+    .pulse-ring::before {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: inherit;
+      border: 2px solid rgba(251, 113, 133, 0.65);
+      animation: pulseRing 2.4s cubic-bezier(0.24, 0, 0.38, 1) infinite;
+      pointer-events: none;
+    }
+
+    /* Khung ảnh Polaroid / Glass Art */
+    .photo-frame {
+      position: relative;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      border: 2px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 22px 50px -12px rgba(10, 6, 30, 0.65);
+    }
+
+    .photo-frame img {
+      transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.06);
+    }
+
+    /* Tùy chỉnh thanh cuộn tinh tế */
+    .slide::-webkit-scrollbar {
+      width: 6px;
+    }
+    .slide::-webkit-scrollbar-thumb {
+      background: rgba(251, 113, 133, 0.4);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body>
+  <!-- Lớp cực quang hoàng hôn thanh xuân -->
+  <div class="aurora-layer" aria-hidden="true"></div>
+
+  <!-- Canvas nền động: Hoa anh đào rơi, bokeh ánh sáng, trái tim pha lê & pháo hoa chúc mừng -->
+  <canvas id="sakuraCanvas" class="fixed inset-0 w-full h-full pointer-events-none z-[1]" aria-hidden="true"></canvas>
+
+  <!-- ========================================================================
+       THANH ĐIỀU HƯỚNG TRÊN CÙNG (TOP HUD & PROGRESS BAR)
+       ======================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-30 px-3 sm:px-6 pt-2.5 pb-2 pointer-events-none">
+    <!-- Thanh tiến trình mảnh phát sáng -->
+    <div class="w-full h-1.5 bg-white/10 rounded-full overflow-hidden mb-2.5 backdrop-blur-sm">
+      <div id="topProgressBar" class="h-full bg-gradient-to-r from-rose-400 via-amber-300 to-purple-400 rounded-full transition-all duration-500 ease-out" style="width: 12.5%;"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto flex items-center justify-between gap-2 pointer-events-auto">
+      <!-- Huy hiệu lớp & tổ -->
+      <div class="glass-pill px-3.5 py-1.5 rounded-full flex items-center gap-2.5">
+        <span class="w-2.5 h-2.5 rounded-full bg-rose-400 animate-ping"></span>
+        <span class="text-xs sm:text-sm font-bold tracking-wide text-rose-200">LỚP 9A1 • TỔ 3</span>
+        <span class="hidden md:inline text-white/30">|</span>
+        <span id="headerSectionName" class="hidden md:inline text-xs font-medium text-purple-200/90">Trang Bìa Chuyên Đề</span>
+      </div>
+
+      <!-- Chấm chỉ mục nhanh 8 slide -->
+      <nav id="slideDotsNav" aria-label="Điều hướng các trang thuyết trình" class="hidden sm:flex items-center gap-1.5 glass-pill px-3 py-1.5 rounded-full">
+        <!-- Được tạo tự động bằng JS -->
+      </nav>
+
+      <!-- Công cụ điều khiển nhanh: Bộ đếm, Mục lục (G), Toàn màn hình (F) -->
+      <div class="flex items-center gap-2">
+        <div class="glass-pill px-3 py-1.5 rounded-full text-xs sm:text-sm font-semibold text-amber-200 tabular-nums">
+          <span id="slideCounter">01 / 08</span>
+        </div>
+
+        <button id="btnOverview" type="button" title="Bảng mục lục nhanh (Phím G)" class="glass-pill p-2 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold text-white/90 hover:text-rose-200 hover:border-rose-300/50 transition flex items-center gap-1.5 cursor-pointer">
+          <svg class="w-4 h-4 text-rose-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+          </svg>
+          <span class="hidden lg:inline">Mục lục (G)</span>
+        </button>
+
+        <button id="btnFullscreen" type="button" title="Chế độ toàn màn hình (Phím F)" class="glass-pill p-2 sm:px-3 sm:py-1.5 rounded-full text-xs font-semibold text-white/90 hover:text-amber-200 hover:border-amber-300/50 transition flex items-center gap-1.5 cursor-pointer">
+          <svg id="iconFullscreen" class="w-4 h-4 text-amber-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+          </svg>
+          <span class="hidden lg:inline">Toàn màn hình (F)</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       KHUNG TRÌNH CHIẾU CHÍNH (8 SLIDES)
+       ======================================================================== -->
+  <main id="slidesViewport" class="slides-viewport">
+
+    <!-- ======================================================================
+         SLIDE 1: TRANG BÌA (TITLE SLIDE)
+         ====================================================================== -->
+    <section class="slide active" data-index="0" data-title="Trang Bìa">
+      <div class="max-w-5xl w-full mx-auto text-center relative">
+        <!-- Vòng hào quang trang trí -->
+        <div class="absolute -top-12 left-1/2 -translate-x-1/2 w-72 h-72 bg-rose-500/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <!-- Chủ đề lớn của môn học -->
+        <div class="stagger-item delay-1 inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-rose-300/35 text-rose-200 text-xs sm:text-sm font-semibold tracking-wider uppercase mb-4 shadow-lg">
+          <span>✨</span>
+          <span>Chuyên đề Kỹ năng sống &amp; Tâm lý học đường</span>
+          <span>✨</span>
+        </div>
+
+        <p class="stagger-item delay-2 text-xs sm:text-base text-purple-200/90 font-medium tracking-wide mb-3">
+          Chủ đề lớn: <span class="text-amber-200 font-semibold">Những vấn đề cần giải quyết trong đời sống học sinh hiện nay</span>
+        </p>
+
+        <!-- Tiêu đề chính rực rỡ -->
+        <h1 class="stagger-item delay-2 font-extrabold text-4xl sm:text-6xl md:text-7xl tracking-tight leading-tight gradient-title mb-5">
+          TÌNH YÊU TUỔI HỌC TRÒ
+        </h1>
+
+        <!-- Phụ đề sâu sắc -->
+        <p class="stagger-item delay-3 font-serif italic text-lg sm:text-2xl md:text-3xl text-rose-100/95 max-w-3xl mx-auto leading-relaxed mb-8">
+          “Rung Động Đầu Đời &amp; Bài Toán Cân Bằng Trong Đời Sống Học Sinh Hiện Nay”
+        </p>
+
+        <!-- Thẻ đơn vị thực hiện nổi bật -->
+        <div class="stagger-item delay-4 flex flex-col sm:flex-row items-center justify-center gap-4 mb-9">
+          <div class="glass-card px-6 py-3.5 rounded-2xl flex items-center gap-3.5 animate-float">
+            <div class="w-11 h-11 rounded-xl bg-gradient-to-br from-rose-400 to-purple-500 flex items-center justify-center text-white shadow-md">
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+              </svg>
+            </div>
+            <div class="text-left">
+              <div class="text-xs uppercase tracking-wider text-rose-200/80 font-semibold">Đơn vị thực hiện</div>
+              <div class="text-base sm:text-lg font-bold text-white">Tập thể Tổ 3 – Lớp 9A1</div>
+            </div>
+          </div>
+
+          <div class="glass-card px-5 py-3.5 rounded-2xl flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-amber-400/20 border border-amber-300/40 flex items-center justify-center text-amber-200 font-bold text-sm">
+              8P
+            </div>
+            <div class="text-left">
+              <div class="text-xs uppercase tracking-wider text-amber-200/80 font-semibold">Cấu trúc bài trình bày</div>
+              <div class="text-sm sm:text-base font-semibold text-white">Thực trạng • Nguyên nhân • Giải pháp • Tình huống</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nút bắt đầu thuyết trình -->
+        <div class="stagger-item delay-5">
+          <button type="button" onclick="goToSlide(1)" class="btn-glow pulse-ring relative inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-bold text-base sm:text-lg tracking-wide cursor-pointer">
+            <span>Bắt Đầu Thuyết Trình</span>
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SLIDE 2: ĐẶT VẤN ĐỀ & THỰC TRẠNG HIỆN NAY
+         ====================================================================== -->
+    <section class="slide" data-index="1" data-title="Đặt Vấn Đề & Thực Trạng">
+      <div class="max-w-6xl w-full mx-auto">
+        <!-- Tiêu đề Slide -->
+        <div class="stagger-item delay-1 mb-6 flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div>
+            <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-500/25 text-rose-200 border border-rose-400/30 mb-2">
+              Phần 01 • Bức tranh toàn cảnh
+            </span>
+            <h2 class="text-2xl sm:text-4xl font-extrabold gradient-title">
+              Đặt Vấn Đề &amp; Thực Trạng Hiện Nay
+            </h2>
+          </div>
+          <p class="text-xs sm:text-sm text-purple-200/85 italic">
+            Nhấn vào các nút bên dưới để khám phá Ví dụ thực tế &amp; Góc nhìn mở rộng
+          </p>
+        </div>
+
+        <!-- Bố cục 2 cột: Ảnh thực tế + Nội dung ý chính/phụ -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- Cột trái: Ảnh thực tế kèm fallback SVG nghệ thuật -->
+          <div class="lg:col-span-5 stagger-item delay-2">
+            <div class="photo-frame bg-gradient-to-br from-rose-900/50 to-indigo-950/70 p-2.5 glass-card">
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/3] bg-twilight-900">
+                <img
+                  src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=900&q=80"
+                  alt="Học sinh trò chuyện vui vẻ dưới nắng sân trường"
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                />
+                <!-- Minh họa SVG dự phòng nếu mất kết nối mạng -->
+                <div class="hidden w-full h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-rose-500/30 via-purple-600/30 to-amber-500/30 text-center">
+                  <svg class="w-28 h-28 mb-3 text-rose-200" viewBox="0 0 120 120" fill="none">
+                    <circle cx="60" cy="60" r="52" stroke="currentColor" stroke-width="2" stroke-dasharray="6 4" opacity="0.6"/>
+                    <circle cx="44" cy="48" r="11" fill="#fda4af"/>
+                    <circle cx="76" cy="48" r="11" fill="#fdba74"/>
+                    <path d="M26 88c3-14 14-20 18-20s15 6 18 20" fill="#fb7185" opacity="0.85"/>
+                    <path d="M58 88c3-14 14-20 18-20s15 6 18 20" fill="#c084fc" opacity="0.85"/>
+                    <path d="M60 32c-3-5-10-5-10 1 0 5 10 11 10 11s10-6 10-11c0-6-7-6-10-1z" fill="#f43f5e"/>
+                  </svg>
+                  <p class="text-sm font-semibold text-rose-100">Khoảnh khắc thanh xuân dưới nắng sân trường</p>
+                </div>
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-twilight-950/90 via-twilight-950/50 to-transparent p-4">
+                  <span class="text-xs font-semibold text-amber-200 flex items-center gap-1.5">
+                    <span>☀️</span> Tuổi 14–15: Ngưỡng cửa của những rung động đầu tiên
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột phải: 2 Ý chính + Ý phụ + Nút tương tác -->
+          <div class="lg:col-span-7 space-y-4">
+            <!-- Ý chính 1 -->
+            <div class="stagger-item delay-3 glass-card rounded-2xl p-5 tilt-card">
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-rose-500/25 border border-rose-300/40 flex items-center justify-center text-rose-200 font-extrabold shrink-0">
+                  01
+                </div>
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5">
+                    Quy luật tâm sinh lý tự nhiên ở lứa tuổi dậy thì (đặc biệt lớp 9)
+                  </h3>
+                  <p class="text-sm sm:text-base text-rose-100/85 leading-relaxed">
+                    <span class="text-amber-300 font-semibold">• Ý phụ:</span> Sự rung động tinh khôi trước nét đẹp ngoại hình, tính cách ấm áp hoặc sự đồng điệu trong học tập, âm nhạc và sở thích chung.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ý chính 2 -->
+            <div class="stagger-item delay-4 glass-card rounded-2xl p-5 tilt-card">
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-purple-500/25 border border-purple-300/40 flex items-center justify-center text-purple-200 font-extrabold shrink-0">
+                  02
+                </div>
+                <div>
+                  <h3 class="text-lg sm:text-xl font-bold text-white mb-1.5">
+                    Bối cảnh kỷ nguyên số làm thay đổi cách tiếp cận tình cảm
+                  </h3>
+                  <p class="text-sm sm:text-base text-rose-100/85 leading-relaxed">
+                    <span class="text-amber-300 font-semibold">• Ý phụ:</span> Ảnh hưởng mạnh mẽ từ mạng xã hội (TikTok, Facebook), xu hướng công khai tình cảm sớm và tâm lý <span class="italic text-pink-200">“sợ bỏ lỡ” (FOMO)</span> khi thấy bạn bè xung quanh đều có đôi.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Thanh nút mở Modal Ví dụ thực tế & Ý mở rộng -->
+            <div class="stagger-item delay-5 flex flex-wrap gap-3 pt-1">
+              <button
+                type="button"
+                onclick="openDetailModal('slide2-example')"
+                class="flex-1 min-w-[200px] glass-card hover:bg-rose-500/25 border-rose-300/40 px-5 py-3.5 rounded-xl flex items-center justify-between gap-3 cursor-pointer group"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">📱</span>
+                  <div class="text-left">
+                    <div class="text-xs text-rose-200 font-semibold uppercase">Mở thẻ phân tích</div>
+                    <div class="text-sm sm:text-base font-bold text-white">Ví dụ thực tế</div>
+                  </div>
+                </div>
+                <span class="text-rose-200 group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+
+              <button
+                type="button"
+                onclick="openDetailModal('slide2-expand')"
+                class="flex-1 min-w-[200px] glass-card hover:bg-purple-500/25 border-purple-300/40 px-5 py-3.5 rounded-xl flex items-center justify-between gap-3 cursor-pointer group"
+              >
+                <div class="flex items-center gap-2.5">
+                  <span class="text-xl">💡</span>
+                  <div class="text-left">
+                    <div class="text-xs text-purple-200 font-semibold uppercase">Chiều sâu tâm lý</div>
+                    <div class="text-sm sm:text-base font-bold text-white">Ý mở rộng</div>
+                  </div>
+                </div>
+                <span class="text-purple-200 group-hover:translate-x-1 transition-transform">→</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SLIDE 3: HAI MẶT CỦA TÌNH YÊU TUỔI HỌC TRÒ (SO SÁNH TƯƠNG TÁC)
+         ====================================================================== -->
+    <section class="slide" data-index="2" data-title="Hai Mặt Của Tình Yêu Học Trò">
+      <div class="max-w-6xl w-full mx-auto">
+        <div class="stagger-item delay-1 text-center mb-6">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/20 text-amber-200 border border-amber-300/30 mb-2">
+            Phần 02 • Góc nhìn đa chiều
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold gradient-title">
+            Hai Mặt Của Tình Yêu Tuổi Học Trò
+          </h2>
+        </div>
+
+        <!-- Bố cục so sánh 2 cột -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 mb-5">
+          <!-- Cột 1: Mặt tích cực -->
+          <div class="stagger-item delay-2 glass-card rounded-3xl p-6 border-emerald-300/35 relative overflow-hidden tilt-card">
+            <div class="absolute -right-8 -top-8 w-32 h-32 bg-emerald-400/15 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-400 to-teal-500 flex items-center justify-center text-white text-2xl shadow-lg">
+                🌱
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-emerald-300">Mặt Tích Cực</span>
+                <h3 class="text-xl font-extrabold text-white">Động Lực Vươn Lên</h3>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm sm:text-base">
+              <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                <p class="font-bold text-emerald-200 mb-1">★ Ý chính:</p>
+                <p class="text-white/95">Nguồn cổ vũ tinh thần trong sáng giúp cả hai cùng tiến bộ và hoàn thiện bản thân.</p>
+              </div>
+              <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                <p class="font-bold text-emerald-200 mb-1">• Ý phụ:</p>
+                <p class="text-rose-100/85">Nhắc nhở nhau học bài, chia sẻ áp lực thi cử, rèn luyện sự quan tâm, lắng nghe và tinh thần trách nhiệm.</p>
+              </div>
+              <div class="bg-emerald-500/15 rounded-xl p-3.5 border border-emerald-300/30">
+                <p class="font-bold text-amber-200 mb-1">📌 Ví dụ thực tế:</p>
+                <p class="text-white/90 text-xs sm:text-sm leading-relaxed">
+                  Đôi bạn cùng bàn đặt mục tiêu cùng thi đỗ vào một trường THPT mơ ước, cùng nhau giải đề Toán – Văn mỗi giờ ra chơi và động viên nhau vượt qua kỳ thi thử.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cột 2: Mặt tiêu cực -->
+          <div class="stagger-item delay-3 glass-card rounded-3xl p-6 border-rose-400/35 relative overflow-hidden tilt-card">
+            <div class="absolute -right-8 -top-8 w-32 h-32 bg-rose-500/15 rounded-full blur-2xl pointer-events-none"></div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-500 to-orange-500 flex items-center justify-center text-white text-2xl shadow-lg">
+                🌧️
+              </div>
+              <div>
+                <span class="text-xs font-bold uppercase tracking-wider text-rose-300">Mặt Tiêu Cực</span>
+                <h3 class="text-xl font-extrabold text-white">Hệ Lụy Khi Thiếu Kiểm Soát</h3>
+              </div>
+            </div>
+
+            <div class="space-y-3 text-sm sm:text-base">
+              <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                <p class="font-bold text-rose-300 mb-1">★ Ý chính:</p>
+                <p class="text-white/95">Xao nhãng nhiệm vụ học tập và dễ tổn thương tâm lý khi cảm xúc lấn át lý trí.</p>
+              </div>
+              <div class="bg-white/5 rounded-xl p-3.5 border border-white/10">
+                <p class="font-bold text-rose-300 mb-1">• Ý phụ:</p>
+                <p class="text-rose-100/85">Thức khuya nhắn tin, ghen tuông vô cớ, suy sụp tinh thần kéo dài khi xảy ra mâu thuẫn hoặc chia tay.</p>
+              </div>
+              <div class="bg-rose-500/15 rounded-xl p-3.5 border border-rose-300/30">
+                <p class="font-bold text-amber-200 mb-1">📌 Ví dụ thực tế:</p>
+                <p class="text-white/90 text-xs sm:text-sm leading-relaxed">
+                  Học sinh sa sút điểm số nghiêm trọng vào giai đoạn nước rút học kỳ II lớp 9 vì chuyện tình cảm chi phối, mất ngủ và mất phương hướng ôn tập.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ý mở rộng nổi bật ở chân slide -->
+        <div class="stagger-item delay-4 glass-card rounded-2xl p-4 sm:p-5 border-amber-300/40 bg-gradient-to-r from-rose-500/15 via-purple-500/15 to-amber-500/15 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <div class="flex items-center gap-3.5">
+            <span class="text-2xl sm:text-3xl shrink-0">✨</span>
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-amber-300 block">Ý mở rộng &amp; Thông điệp cốt lõi</span>
+              <p class="font-serif italic text-base sm:text-lg text-white font-semibold">
+                “Tình cảm tuổi học trò không có lỗi — điều quyết định nằm ở cách chúng ta làm chủ cảm xúc và đặt đúng thứ tự ưu tiên.”
+              </p>
+            </div>
+          </div>
+          <button
+            type="button"
+            onclick="openDetailModal('slide3-expand')"
+            class="shrink-0 px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 border border-white/25 text-xs sm:text-sm font-bold text-amber-200 transition cursor-pointer"
+          >
+            Phân tích sâu →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SLIDE 4: 4 VẤN ĐỀ NỔI CỘM CẦN GIẢI QUYẾT (4 INTERACTIVE CARDS)
+         ====================================================================== -->
+    <section class="slide" data-index="3" data-title="4 Vấn Đề Nổi Cộm">
+      <div class="max-w-6xl w-full mx-auto">
+        <div class="stagger-item delay-1 text-center mb-6">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-rose-500/25 text-rose-200 border border-rose-400/30 mb-2">
+            Phần 03 • Nhận diện thách thức
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold gradient-title mb-1.5">
+            4 Vấn Đề Nổi Cộm Cần Giải Quyết
+          </h2>
+          <p class="text-xs sm:text-sm text-rose-100/80">
+            👆 Nhấn vào từng thẻ vấn đề để xem phân tích chi tiết, ví dụ thực tiễn và ý mở rộng
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
+          <!-- Thẻ 1 -->
+          <button
+            type="button"
+            onclick="openDetailModal('problem-1')"
+            class="stagger-item delay-2 glass-card rounded-2xl p-5 text-left hover:bg-white/15 transition group cursor-pointer tilt-card flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-lg bg-rose-500/25 text-rose-200 text-xs font-extrabold">VẤN ĐỀ 01</span>
+                <span class="text-2xl">📚</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-rose-200 transition mb-2">
+                Mất cân bằng giữa tình cảm và nhiệm vụ học tập
+              </h3>
+              <p class="text-sm text-rose-100/80 leading-relaxed">
+                Xem nhẹ việc tích lũy kiến thức nền tảng, dành quá nhiều thời gian và tâm trí cho chuyện yêu đương ngay trước kỳ thi chuyển cấp.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-amber-300">
+              <span>Xem ví dụ &amp; phân tích chiều sâu</span>
+              <span class="group-hover:translate-x-1.5 transition-transform">Chi tiết →</span>
+            </div>
+          </button>
+
+          <!-- Thẻ 2 -->
+          <button
+            type="button"
+            onclick="openDetailModal('problem-2')"
+            class="stagger-item delay-3 glass-card rounded-2xl p-5 text-left hover:bg-white/15 transition group cursor-pointer tilt-card flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-lg bg-purple-500/25 text-purple-200 text-xs font-extrabold">VẤN ĐỀ 02</span>
+                <span class="text-2xl">🛡️</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-purple-200 transition mb-2">
+                Thiếu kỹ năng thiết lập ranh giới &amp; kiến thức giới tính
+              </h3>
+              <p class="text-sm text-rose-100/80 leading-relaxed">
+                Yêu theo cảm tính nhất thời, thiếu hiểu biết về tâm sinh lý và sức khỏe sinh sản, dễ dẫn đến hành động vượt giới hạn khi chưa đủ trưởng thành.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-amber-300">
+              <span>Xem ví dụ &amp; phân tích chiều sâu</span>
+              <span class="group-hover:translate-x-1.5 transition-transform">Chi tiết →</span>
+            </div>
+          </button>
+
+          <!-- Thẻ 3 -->
+          <button
+            type="button"
+            onclick="openDetailModal('problem-3')"
+            class="stagger-item delay-4 glass-card rounded-2xl p-5 text-left hover:bg-white/15 transition group cursor-pointer tilt-card flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-lg bg-amber-500/25 text-amber-200 text-xs font-extrabold">VẤN ĐỀ 03</span>
+                <span class="text-2xl">🌐</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-amber-200 transition mb-2">
+                Áp lực từ mạng xã hội &amp; bạo lực tinh thần
+              </h3>
+              <p class="text-sm text-rose-100/80 leading-relaxed">
+                Công khai chuyện riêng tư quá mức, dễ bị tổn thương bởi bình luận ác ý, soi mói, trêu chọc hoặc nguy cơ lộ thông tin, hình ảnh nhạy cảm.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-amber-300">
+              <span>Xem ví dụ &amp; phân tích chiều sâu</span>
+              <span class="group-hover:translate-x-1.5 transition-transform">Chi tiết →</span>
+            </div>
+          </button>
+
+          <!-- Thẻ 4 -->
+          <button
+            type="button"
+            onclick="openDetailModal('problem-4')"
+            class="stagger-item delay-5 glass-card rounded-2xl p-5 text-left hover:bg-white/15 transition group cursor-pointer tilt-card flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="px-3 py-1 rounded-lg bg-pink-500/25 text-pink-200 text-xs font-extrabold">VẤN ĐỀ 04</span>
+                <span class="text-2xl">🌉</span>
+              </div>
+              <h3 class="text-lg sm:text-xl font-bold text-white group-hover:text-pink-200 transition mb-2">
+                Khoảng cách thế hệ với gia đình &amp; thầy cô
+              </h3>
+              <p class="text-sm text-rose-100/80 leading-relaxed">
+                Tâm lý giấu giếm, né tránh chia sẻ hoặc phản ứng cực đoan, chống đối khi bị người lớn nhắc nhở thay vì đối thoại cởi mở.
+              </p>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-amber-300">
+              <span>Xem ví dụ &amp; phân tích chiều sâu</span>
+              <span class="group-hover:translate-x-1.5 transition-transform">Chi tiết →</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SLIDE 5: NGUYÊN NHÂN SÂU XA CỦA CÁC VẤN ĐỀ
+         ====================================================================== -->
+    <section class="slide" data-index="4" data-title="Nguyên Nhân Sâu Xa">
+      <div class="max-w-6xl w-full mx-auto">
+        <div class="stagger-item delay-1 mb-6">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-purple-500/25 text-purple-200 border border-purple-400/30 mb-2">
+            Phần 04 • Truy tìm gốc rễ
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold gradient-title">
+            Nguyên Nhân Sâu Xa Của Các Vấn Đề
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+          <!-- 3 Trụ cột nguyên nhân (7 cột) -->
+          <div class="lg:col-span-7 space-y-3.5">
+            <!-- Trụ cột 1 -->
+            <div class="stagger-item delay-2 glass-card rounded-2xl p-4 sm:p-5 tilt-card">
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-rose-400 to-pink-600 flex items-center justify-center text-white font-bold shrink-0">
+                  1
+                </div>
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-rose-200 mb-1">
+                    Từ bản thân học sinh
+                  </h3>
+                  <p class="text-sm text-white/90 leading-relaxed">
+                    Sự thay đổi hormone tuổi dậy thì diễn ra mạnh mẽ, khao khát được khẳng định cái tôi và được thấu hiểu, nhưng lại thiếu kỹ năng quản lý cảm xúc và kinh nghiệm sống.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trụ cột 2 -->
+            <div class="stagger-item delay-3 glass-card rounded-2xl p-4 sm:p-5 tilt-card">
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-400 to-indigo-600 flex items-center justify-center text-white font-bold shrink-0">
+                  2
+                </div>
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-purple-200 mb-1">
+                    Từ gia đình &amp; nhà trường
+                  </h3>
+                  <p class="text-sm text-white/90 leading-relaxed">
+                    Phụ huynh đôi khi áp đặt, cấm đoán gay gắt hoặc còn e ngại, né tránh giáo dục giới tính khiến học sinh thiếu điểm tựa tư vấn an toàn và tin cậy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Trụ cột 3 -->
+            <div class="stagger-item delay-4 glass-card rounded-2xl p-4 sm:p-5 tilt-card">
+              <div class="flex items-start gap-3.5">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-orange-600 flex items-center justify-center text-white font-bold shrink-0">
+                  3
+                </div>
+                <div>
+                  <h3 class="text-base sm:text-lg font-bold text-amber-200 mb-1">
+                    Từ môi trường truyền thông
+                  </h3>
+                  <p class="text-sm text-white/90 leading-relaxed">
+                    Phim ảnh, tiểu thuyết ngôn tình và các nội dung ngắn trên mạng xã hội “màu hồng hóa” tình yêu tuổi teen, tạo ra những ảo tưởng xa rời thực tế học đường.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ý mở rộng -->
+            <div class="stagger-item delay-5 glass-card rounded-2xl p-4 border-rose-300/40 bg-rose-500/15 flex items-center justify-between gap-3">
+              <p class="text-xs sm:text-sm text-rose-100 leading-relaxed">
+                <span class="font-bold text-amber-300">💡 Ý mở rộng:</span> Khi không được lắng nghe ở gia đình, học sinh dễ tìm kiếm sự bù đắp tình cảm một cách vội vàng từ bên ngoài.
+              </p>
+              <button
+                type="button"
+                onclick="openDetailModal('slide5-expand')"
+                class="shrink-0 px-3.5 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-bold text-white cursor-pointer"
+              >
+                Ví dụ →
+              </button>
+            </div>
+          </div>
+
+          <!-- Hình ảnh thực tế: Góc học tập với sách vở & điện thoại (5 cột) -->
+          <div class="lg:col-span-5 stagger-item delay-3">
+            <div class="photo-frame glass-card p-2.5">
+              <div class="relative rounded-2xl overflow-hidden aspect-[4/4] sm:aspect-[4/3] lg:aspect-[4/4] bg-twilight-900">
+                <img
+                  src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&w=900&q=80"
+                  alt="Góc học tập với sách vở và điện thoại bên khung cửa sổ"
+                  class="w-full h-full object-cover"
+                  onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');"
+                />
+                <!-- Minh họa SVG dự phòng -->
+                <div class="hidden w-full h-full flex flex-col items-center justify-center p-6 bg-gradient-to-br from-indigo-900/60 via-purple-800/50 to-rose-800/50 text-center">
+                  <svg class="w-28 h-28 mb-3 text-amber-200" viewBox="0 0 120 120" fill="none">
+                    <rect x="20" y="65" width="80" height="14" rx="4" fill="#fb7185" opacity="0.8"/>
+                    <rect x="26" y="51" width="68" height="14" rx="4" fill="#c084fc" opacity="0.85"/>
+                    <rect x="46" y="22" width="28" height="46" rx="5" fill="#1e1b4b" stroke="#fdba74" stroke-width="2.5"/>
+                    <circle cx="60" cy="44" r="6" fill="#f43f5e"/>
+                  </svg>
+                  <p class="text-sm font-semibold text-amber-100">Góc học tập &amp; ranh giới giữa sách vở với thế giới số</p>
+                </div>
+                <div class="absolute bottom-0 inset-x-0 bg-gradient-to-t from-twilight-950/95 via-twilight-950/60 to-transparent p-4">
+                  <p class="text-xs sm:text-sm font-semibold text-rose-100">
+                    📖 Giữa trang sách ôn thi và màn hình thông báo tin nhắn — đâu là tâm điểm của tuổi 15?
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SLIDE 6: GIẢI PHÁP TOÀN DIỆN – "GIỮ NHỊP TRÁI TIM, VỮNG BƯỚC TƯƠNG LAI"
+         ====================================================================== -->
+    <section class="slide" data-index="5" data-title="Giải Pháp Toàn Diện">
+      <div class="max-w-6xl w-full mx-auto">
+        <div class="stagger-item delay-1 text-center mb-4">
+          <span class="inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-emerald-500/20 text-emerald-200 border border-emerald-300/30 mb-1.5">
+            Phần 05 • Hành động thiết thực
+          </span>
+          <h2 class="text-xl sm:text-3xl md:text-4xl font-extrabold gradient-title">
+            Giải Pháp Toàn Diện: “Giữ Nhịp Trái Tim, Vững Bước Tương Lai”
+          </h2>
+        </div>
+
+        <!-- Thanh Tab lọc nhanh nhóm giải pháp -->
+        <div class="stagger-item delay-2 flex flex-wrap items-center justify-center gap-2 mb-5">
+          <button type="button" onclick="filterSolutions('all')" data-tab="all" class="sol-tab active px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-rose-500 text-white shadow-md transition cursor-pointer">
+            Tất cả 3 nhóm
+          </button>
+          <button type="button" onclick="filterSolutions('student')" data-tab="student" class="sol-tab px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 text-white/85 hover:bg-white/20 transition cursor-pointer">
+            1. Bản thân học sinh
+          </button>
+          <button type="button" onclick="filterSolutions('family')" data-tab="family" class="sol-tab px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 text-white/85 hover:bg-white/20 transition cursor-pointer">
+            2. Gia đình &amp; Thầy cô
+          </button>
+          <button type="button" onclick="filterSolutions('class')" data-tab="class" class="sol-tab px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 text-white/85 hover:bg-white/20 transition cursor-pointer">
+            3. Tập thể lớp &amp; Bạn bè
+          </button>
+        </div>
+
+        <!-- 3 Cột giải pháp -->
+        <div id="solutionsGrid" class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+          <!-- Giải pháp 1 -->
+          <div data-group="student" class="sol-card stagger-item delay-2 glass-card rounded-2xl p-5 border-rose-300/40 flex flex-col justify-between tilt-card">
+            <div>
+              <div class="flex items-center gap-2.5 mb-3">
+                <span class="w-9 h-9 rounded-xl bg-rose-500/30 text-rose-200 font-extrabold flex items-center justify-center">01</span>
+                <div>
+                  <div class="text-[11px] uppercase tracking-wider text-rose-300 font-bold">Giải pháp cốt lõi</div>
+                  <h3 class="text-base sm:text-lg font-extrabold text-white">Từ Bản Thân Học Sinh</h3>
+                </div>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-rose-100/90">
+                <li>
+                  <span class="font-bold text-amber-200">★ Ý chính:</span> Xác định học tập và phát triển bản thân là ưu tiên số 1.
+                </li>
+                <li>
+                  <span class="font-bold text-rose-200">• Ý phụ:</span> Giữ tình cảm trong sáng, văn minh, tôn trọng ranh giới cá nhân và nói “không” với những hành động vượt quá lứa tuổi.
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/15 bg-rose-500/15 rounded-xl p-3">
+              <div class="text-xs font-bold text-amber-300 mb-0.5">⏱️ Ví dụ thực tế:</div>
+              <p class="text-xs text-white/90">
+                Áp dụng quy tắc <span class="font-bold text-rose-200">“20 phút kết nối”</span> — chỉ trò chuyện sau khi đã hoàn thành toàn bộ bài tập về nhà.
+              </p>
+            </div>
+          </div>
+
+          <!-- Giải pháp 2 -->
+          <div data-group="family" class="sol-card stagger-item delay-3 glass-card rounded-2xl p-5 border-purple-300/40 flex flex-col justify-between tilt-card">
+            <div>
+              <div class="flex items-center gap-2.5 mb-3">
+                <span class="w-9 h-9 rounded-xl bg-purple-500/30 text-purple-200 font-extrabold flex items-center justify-center">02</span>
+                <div>
+                  <div class="text-[11px] uppercase tracking-wider text-purple-300 font-bold">Điểm tựa đồng hành</div>
+                  <h3 class="text-base sm:text-lg font-extrabold text-white">Từ Gia Đình &amp; Thầy Cô</h3>
+                </div>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-rose-100/90">
+                <li>
+                  <span class="font-bold text-amber-200">★ Ý chính:</span> Lắng nghe thấu cảm và định hướng nhẹ nhàng thay vì cấm đoán cực đoan.
+                </li>
+                <li>
+                  <span class="font-bold text-purple-200">• Ý phụ:</span> Tổ chức các buổi sinh hoạt chuyên đề về tâm lý tuổi dậy thì, sức khỏe sinh sản và kỹ năng ứng xử trên không gian mạng.
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/15 bg-purple-500/15 rounded-xl p-3">
+              <div class="text-xs font-bold text-amber-300 mb-0.5">🤝 Gợi ý kết nối:</div>
+              <p class="text-xs text-white/90">
+                Xây dựng “Hộp thư tư vấn tâm lý học đường” và những cuộc trò chuyện cởi mở giữa cha mẹ – con cái cuối tuần.
+              </p>
+            </div>
+          </div>
+
+          <!-- Giải pháp 3 -->
+          <div data-group="class" class="sol-card stagger-item delay-4 glass-card rounded-2xl p-5 border-amber-300/40 flex flex-col justify-between tilt-card">
+            <div>
+              <div class="flex items-center gap-2.5 mb-3">
+                <span class="w-9 h-9 rounded-xl bg-amber-500/30 text-amber-200 font-extrabold flex items-center justify-center">03</span>
+                <div>
+                  <div class="text-[11px] uppercase tracking-wider text-amber-300 font-bold">Môi trường lành mạnh</div>
+                  <h3 class="text-base sm:text-lg font-extrabold text-white">Từ Tập Thể Lớp &amp; Bạn Bè</h3>
+                </div>
+              </div>
+              <ul class="space-y-2.5 text-xs sm:text-sm text-rose-100/90">
+                <li>
+                  <span class="font-bold text-amber-200">★ Ý chính:</span> Xây dựng văn hóa học đường tôn trọng, nhân văn và văn minh.
+                </li>
+                <li>
+                  <span class="font-bold text-amber-200">• Ý phụ:</span> Không trêu chọc gán ghép quá đà, không quay lén hay lan truyền tin đồn về chuyện tình cảm của bạn bè.
+                </li>
+              </ul>
+            </div>
+            <div class="mt-4 pt-3 border-t border-white/15 bg-amber-500/15 rounded-xl p-3">
+              <div class="text-xs font-bold text-amber-300 mb-0.5">🌟 Tinh thần 9A1:</div>
+              <p class="text-xs text-white/90">
+                Khuyến khích các nhóm đôi bạn cùng tiến, biến sự quý mến thành động lực thi đua học tập lành mạnh.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Ý mở rộng chuyển hóa tình cảm -->
+        <div class="stagger-item delay-5 glass-card rounded-2xl p-4 border-emerald-300/40 bg-gradient-to-r from-emerald-500/15 via-rose-500/15 to-purple-500/15 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <p class="text-xs sm:text-sm md:text-base text-white">
+            <span class="font-extrabold text-emerald-300">🚀 Ý mở rộng:</span> Biến rung động đầu đời thành <span class="font-bold text-amber-200 underline decoration-amber-300/60">“Tình bạn khác giới nâng đỡ”</span> — cùng nhau chinh phục kỳ thi tuyển sinh vào lớp 10!
+          </p>
+          <button
+            type="button"
+            onclick="openDetailModal('slide6-expand')"
+            class="shrink-0 px-4 py-2 rounded-xl bg-white/15 hover:bg-white/25 text-xs font-bold text-emerald-200 cursor-pointer"
+          >
+            Xem bí quyết →
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SLIDE 7: GÓC TƯƠNG TÁC LỚP 9A1 – BẠN SẼ XỬ LÝ THẾ NÀO?
+         ====================================================================== -->
+    <section class="slide" data-index="6" data-title="Góc Tương Tác Lớp 9A1">
+      <div class="max-w-5xl w-full mx-auto">
+        <div class="stagger-item delay-1 text-center mb-5">
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-400/25 text-amber-200 border border-amber-300/40 mb-2">
+            Phần 06 • Thảo luận trực tiếp cùng lớp 9A1
+          </span>
+          <h2 class="text-2xl sm:text-4xl font-extrabold gradient-title">
+            Góc Tương Tác: Bạn Sẽ Xử Lý Thế Nào?
+          </h2>
+        </div>
+
+        <!-- Hộp tình huống thực tế -->
+        <div class="stagger-item delay-2 glass-card rounded-3xl p-5 sm:p-6 border-rose-300/45 mb-5 relative overflow-hidden">
+          <div class="flex items-start gap-4">
+            <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-rose-400 to-amber-500 flex items-center justify-center text-2xl shrink-0 shadow-lg">
+              💬
+            </div>
+            <div>
+              <span class="text-xs font-extrabold uppercase tracking-wider text-rose-300 block mb-1">Tình huống đặt ra</span>
+              <p class="text-base sm:text-lg md:text-xl font-medium text-white leading-relaxed">
+                “Chỉ còn <span class="text-amber-300 font-bold">1 tháng nữa</span> là đến kỳ thi tuyển sinh vào lớp 10. Người bạn đặc biệt của bạn muốn rủ bạn thức khuya nhắn tin tâm sự mỗi tối vì cảm thấy áp lực, khiến bạn thường xuyên buồn ngủ trên lớp. <span class="text-rose-200 font-bold underline decoration-rose-400">Bạn sẽ làm gì?</span>”
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 Nút lựa chọn A, B, C -->
+        <div class="stagger-item delay-3 grid grid-cols-1 md:grid-cols-3 gap-4 mb-5">
+          <!-- Phương án A -->
+          <button
+            type="button"
+            onclick="selectQuizOption('A')"
+            id="quizBtnA"
+            class="quiz-opt glass-card rounded-2xl p-4 sm:p-5 text-left hover:bg-white/15 transition cursor-pointer border-white/20 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="w-8 h-8 rounded-full bg-rose-500/30 border border-rose-300/50 text-rose-200 font-extrabold flex items-center justify-center text-sm">A</span>
+                <span class="text-xs text-white/60 font-medium">Chiều theo cảm xúc</span>
+              </div>
+              <p class="text-sm sm:text-base text-white/95 font-medium leading-relaxed">
+                Đồng ý thức khuya nhắn tin đến 1–2 giờ sáng mỗi tối vì sợ bạn ấy buồn, tủi thân hoặc giận dỗi mình.
+              </p>
+            </div>
+            <div class="mt-3 text-xs font-bold text-rose-300">Nhấn để chọn phương án A →</div>
+          </button>
+
+          <!-- Phương án B -->
+          <button
+            type="button"
+            onclick="selectQuizOption('B')"
+            id="quizBtnB"
+            class="quiz-opt glass-card rounded-2xl p-4 sm:p-5 text-left hover:bg-white/15 transition cursor-pointer border-white/20 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="w-8 h-8 rounded-full bg-purple-500/30 border border-purple-300/50 text-purple-200 font-extrabold flex items-center justify-center text-sm">B</span>
+                <span class="text-xs text-white/60 font-medium">Phản ứng cứng nhắc</span>
+              </div>
+              <p class="text-sm sm:text-base text-white/95 font-medium leading-relaxed">
+                Lạnh lùng từ chối thẳng thừng, chặn tin nhắn và tránh mặt bạn ấy hoàn toàn cho đến khi thi xong lớp 10.
+              </p>
+            </div>
+            <div class="mt-3 text-xs font-bold text-purple-300">Nhấn để chọn phương án B →</div>
+          </button>
+
+          <!-- Phương án C -->
+          <button
+            type="button"
+            onclick="selectQuizOption('C')"
+            id="quizBtnC"
+            class="quiz-opt glass-card rounded-2xl p-4 sm:p-5 text-left hover:bg-white/15 transition cursor-pointer border-white/20 flex flex-col justify-between"
+          >
+            <div>
+              <div class="flex items-center justify-between mb-2.5">
+                <span class="w-8 h-8 rounded-full bg-emerald-500/30 border border-emerald-300/50 text-emerald-200 font-extrabold flex items-center justify-center text-sm">C</span>
+                <span class="text-xs text-white/60 font-medium">Cân bằng &amp; Tinh tế</span>
+              </div>
+              <p class="text-sm sm:text-base text-white/95 font-medium leading-relaxed">
+                Chân thành chia sẻ, thống nhất quy tắc “cùng nhau cố gắng”: chỉ trò chuyện 15–20 phút trước 22h để động viên, sau đó đi ngủ sớm giữ sức ôn thi.
+              </p>
+            </div>
+            <div class="mt-3 text-xs font-bold text-emerald-300">Nhấn để chọn phương án C →</div>
+          </button>
+        </div>
+
+        <!-- Khu vực hiển thị kết quả phân tích tâm lý trực tiếp -->
+        <div id="quizFeedbackBox" class="hidden glass-card rounded-2xl p-5 border-2 transition-all duration-300">
+          <div class="flex items-start gap-3.5">
+            <div id="quizFeedbackIcon" class="text-3xl shrink-0">🎯</div>
+            <div>
+              <h4 id="quizFeedbackTitle" class="text-base sm:text-lg font-extrabold mb-1"></h4>
+              <p id="quizFeedbackText" class="text-sm sm:text-base text-white/90 leading-relaxed"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================================
+         SLIDE 8: THÔNG ĐIỆP KẾT THÚC & LỜI CẢM ƠN
+         ====================================================================== -->
+    <section class="slide" data-index="7" data-title="Thông Điệp & Lời Cảm Ơn">
+      <div class="max-w-4xl w-full mx-auto text-center relative">
+        <!-- Huy hiệu trái tim tỏa sáng -->
+        <div class="stagger-item delay-1 inline-flex items-center justify-center w-16 h-16 rounded-3xl bg-gradient-to-br from-rose-400 via-pink-500 to-purple-500 text-white text-3xl shadow-2xl mb-5 animate-float">
+          🌸
+        </div>
+
+        <div class="stagger-item delay-2">
+          <span class="inline-block px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-white/10 text-rose-200 border border-rose-300/30 mb-4">
+            Thông Điệp Thanh Xuân
+          </span>
+        </div>
+
+        <!-- Trích dẫn nghệ thuật nổi bật -->
+        <blockquote class="stagger-item delay-3 glass-card rounded-3xl p-6 sm:p-9 border-rose-300/40 mb-7 relative overflow-hidden">
+          <div class="absolute -top-10 -left-10 w-36 h-36 bg-rose-400/20 rounded-full blur-2xl pointer-events-none"></div>
+          <div class="absolute -bottom-10 -right-10 w-36 h-36 bg-amber-400/20 rounded-full blur-2xl pointer-events-none"></div>
+          <p class="font-serif italic text-xl sm:text-2xl md:text-3xl text-white leading-relaxed font-semibold">
+            “Tình yêu tuổi học trò giống như một cơn mưa rào mùa hạ — đủ mát lành để nuôi dưỡng những kỷ niệm đẹp nhất thanh xuân, nhưng đừng để cơn mưa ấy làm ướt trang vở tương lai của chính mình.”
+          </p>
+        </blockquote>
+
+        <!-- Lời cảm ơn từ Tổ 3 - Lớp 9A1 -->
+        <div class="stagger-item delay-4 space-y-2 mb-7">
+          <h2 class="text-2xl sm:text-4xl font-extrabold gradient-title">
+            Xin Chân Thành Cảm Ơn Thầy Cô &amp; Các Bạn Đã Lắng Nghe!
+          </h2>
+          <p class="text-sm sm:text-lg text-rose-100/90 font-medium">
+            Thực hiện bởi: <span class="text-amber-300 font-bold">Tập thể Tổ 3 – Lớp 9A1</span> • Chúc cả lớp một mùa thi lớp 10 thật rực rỡ!
+          </p>
+        </div>
+
+        <!-- Nút tương tác bắn pháo hoa hoa anh đào & quay lại từ đầu -->
+        <div class="stagger-item delay-5 flex flex-wrap items-center justify-center gap-3.5">
+          <button
+            type="button"
+            onclick="triggerCelebrationBurst()"
+            class="btn-glow px-6 py-3.5 rounded-full text-white font-bold text-sm sm:text-base flex items-center gap-2 cursor-pointer"
+          >
+            <span>💖</span>
+            <span>Gửi Ngàn Trái Tim &amp; Hoa Anh Đào</span>
+          </button>
+
+          <button
+            type="button"
+            onclick="goToSlide(0)"
+            class="glass-card hover:bg-white/20 px-5 py-3.5 rounded-full text-white/90 font-semibold text-sm sm:text-base flex items-center gap-2 cursor-pointer"
+          >
+            <span>↺</span>
+            <span>Xem lại từ đầu</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========================================================================
+       THANH ĐIỀU HƯỚNG DƯỚI CÙNG (BOTTOM FLOATING DOCK)
+       ======================================================================== -->
+  <footer class="fixed bottom-3 left-0 right-0 z-30 px-4 pointer-events-none">
+    <div class="max-w-xl mx-auto glass-pill rounded-full px-3 py-2 flex items-center justify-between gap-3 pointer-events-auto">
+      <button
+        id="btnPrev"
+        type="button"
+        onclick="prevSlide()"
+        class="px-4 py-2 rounded-full bg-white/10 hover:bg-rose-500/30 disabled:opacity-35 disabled:pointer-events-none text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 transition cursor-pointer"
+      >
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7" />
+        </svg>
+        <span>Trước</span>
+      </button>
+
+      <div class="text-center overflow-hidden px-2">
+        <div id="bottomSlideTitle" class="text-xs sm:text-sm font-bold text-rose-100 truncate">
+          01. Trang Bìa
+        </div>
+        <div class="hidden sm:block text-[10px] text-white/55">
+          Phím ← → hoặc Space để chuyển trang • Vuốt ngang trên màn hình cảm ứng
+        </div>
+      </div>
+
+      <button
+        id="btnNext"
+        type="button"
+        onclick="nextSlide()"
+        class="px-4 py-2 rounded-full bg-gradient-to-r from-rose-500 to-purple-500 hover:brightness-110 disabled:opacity-35 disabled:pointer-events-none text-white text-xs sm:text-sm font-bold flex items-center gap-1.5 shadow-md transition cursor-pointer"
+      >
+        <span>Tiếp</span>
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       MODAL CHI TIẾT: VÍ DỤ THỰC TẾ & Ý MỞ RỘNG
+       ======================================================================== -->
+  <div id="detailModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-twilight-950/80 backdrop-blur-md transition-opacity">
+    <div class="glass-card bg-twilight-900/95 border-rose-300/40 max-w-2xl w-full rounded-3xl p-6 sm:p-7 relative shadow-2xl transform transition-all">
+      <button
+        type="button"
+        onclick="closeDetailModal()"
+        aria-label="Đóng cửa sổ chi tiết"
+        class="absolute top-4 right-4 w-9 h-9 rounded-full bg-white/10 hover:bg-rose-500/40 text-white flex items-center justify-center font-bold text-lg transition cursor-pointer"
+      >
+        ✕
+      </button>
+
+      <div class="flex items-center gap-3 mb-4 pr-8">
+        <span id="modalIcon" class="text-3xl">💡</span>
+        <div>
+          <span id="modalBadge" class="text-xs font-extrabold uppercase tracking-wider text-amber-300 block"></span>
+          <h3 id="modalTitle" class="text-xl sm:text-2xl font-extrabold text-white"></h3>
+        </div>
+      </div>
+
+      <div id="modalBody" class="space-y-3.5 text-sm sm:text-base text-rose-50/90 leading-relaxed max-h-[65vh] overflow-y-auto pr-1">
+        <!-- Nội dung chi tiết được chèn động -->
+      </div>
+
+      <div class="mt-6 pt-4 border-t border-white/15 flex justify-end">
+        <button
+          type="button"
+          onclick="closeDetailModal()"
+          class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-rose-500 to-purple-500 text-white text-sm font-bold hover:brightness-110 transition cursor-pointer"
+        >
+          Đã hiểu • Quay lại Slide
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       MODAL BẢNG MỤC LỤC NHANH (OVERVIEW GRID - PHÍM G)
+       ======================================================================== -->
+  <div id="overviewModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-twilight-950/85 backdrop-blur-lg">
+    <div class="glass-card bg-twilight-900/95 border-purple-300/35 max-w-4xl w-full rounded-3xl p-6 relative shadow-2xl">
+      <div class="flex items-center justify-between mb-5">
+        <div>
+          <span class="text-xs font-bold uppercase tracking-wider text-rose-300">Điều hướng nhanh • Lớp 9A1 Tổ 3</span>
+          <h3 class="text-xl sm:text-2xl font-extrabold text-white">Mục Lục 8 Trang Thuyết Trình</h3>
+        </div>
+        <button
+          type="button"
+          onclick="closeOverviewModal()"
+          class="w-9 h-9 rounded-full bg-white/10 hover:bg-rose-500/40 text-white flex items-center justify-center font-bold cursor-pointer"
+        >
+          ✕
+        </button>
+      </div>
+
+      <div id="overviewGrid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 max-h-[65vh] overflow-y-auto pr-1">
+        <!-- Các thẻ trang được tạo tự động bằng JS -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       JAVASCRIPT: ĐIỀU KHIỂN SLIDE, TƯƠNG TÁC & CANVAS HOA ANH ĐÀO ĐỘNG
+       ======================================================================== -->
+  <script>
+    /* ------------------------------------------------------------------------
+       1. DỮ LIỆU CHI TIẾT CHO MODAL (VÍ DỤ THỰC TẾ & Ý MỞ RỘNG)
+       ------------------------------------------------------------------------ */
+    const DETAIL_CONTENT = {
+      'slide2-example': {
+        icon: '📱',
+        badge: 'Ví dụ thực tế • Kỷ nguyên số',
+        title: 'Trào Lưu Công Khai Tình Cảm Sớm Trên Mạng Xã Hội',
+        html: `
+          <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+            <p class="font-bold text-rose-200 mb-1">1. Biểu hiện phổ biến ở lứa tuổi THCS:</p>
+            <p>Nhiều bạn học sinh lớp 8, lớp 9 lập tài khoản TikTok/Instagram chung, đặt biệt danh đôi (couple nickname), đăng video "khoe người yêu" hoặc gắn thẻ tên nhau dưới các bài viết xu hướng.</p>
+          </div>
+          <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+            <p class="font-bold text-amber-200 mb-1">2. Hệ quả thực tế:</p>
+            <p>Khi tình cảm còn đang trong giai đoạn rung động chưa chín muồi, việc công khai rầm rộ khiến cả hai chịu áp lực phải "diễn" cho đẹp mắt cộng đồng mạng, dễ rơi vào trạng thái hụt hẫng, xấu hổ khi xảy ra rạn nứt.</p>
+          </div>
+        `
+      },
+      'slide2-expand': {
+        icon: '💡',
+        badge: 'Ý mở rộng • Phân biệt cảm xúc',
+        title: 'Ranh Giới Mong Manh Giữa Các Cung Bậc Tình Cảm Tuổi 15',
+        html: `
+          <div class="bg-purple-500/15 rounded-2xl p-4 border border-purple-300/30">
+            <p class="font-bold text-purple-200 mb-1">• Tình bạn thân thiết khác giới:</p>
+            <p>Sự quý mến, tin tưởng và hợp tính khi cùng học tập, vui chơi nhưng không mang tính chiếm hữu hay ràng buộc riêng tư.</p>
+          </div>
+          <div class="bg-rose-500/15 rounded-2xl p-4 border border-rose-300/30">
+            <p class="font-bold text-rose-200 mb-1">• Sự ngưỡng mộ &amp; Rung động cảm nắng (Crush):</p>
+            <p>Bị thu hút bởi một ưu điểm nổi bật (học giỏi, chơi thể thao hay, hát hay...). Đây là cảm xúc đẹp giúp ta có thêm niềm vui đến trường nếu biết giữ ở mức trong sáng.</p>
+          </div>
+          <div class="bg-amber-500/15 rounded-2xl p-4 border border-amber-300/30">
+            <p class="font-bold text-amber-200 mb-1">• Tình yêu đôi lứa trưởng thành:</p>
+            <p>Đòi hỏi sự thấu hiểu sâu sắc, trách nhiệm lâu dài và khả năng tự chủ cuộc sống — điều mà lứa tuổi học sinh lớp 9 vẫn đang từng bước rèn luyện.</p>
+          </div>
+        `
+      },
+      'slide3-expand': {
+        icon: '⚖️',
+        badge: 'Ý mở rộng • Bài toán ưu tiên',
+        title: 'Làm Chủ Cảm Xúc Trong Năm Cuối Cấp THCS',
+        html: `
+          <p>Ở tuổi 15, cảm xúc thường đến rất nhanh và mạnh mẽ, giống như một ngọn gió xuân. Nếu biết căng buồm đúng hướng, ngọn gió ấy sẽ đẩy con thuyền tri thức đi nhanh hơn.</p>
+          <div class="bg-white/5 rounded-2xl p-4 border border-amber-300/30">
+            <p class="font-bold text-amber-200 mb-1">Nguyên tắc “Tháp ưu tiên lớp 9”:</p>
+            <ul class="list-disc pl-5 space-y-1 text-sm">
+              <li><span class="font-semibold text-white">Tầng 1 (Nền tảng):</span> Sức khỏe thể chất, giấc ngủ và nhiệm vụ học tập ôn thi vào lớp 10.</li>
+              <li><span class="font-semibold text-white">Tầng 2 (Gắn kết):</span> Gia đình, thầy cô và tình bạn tập thể chân thành.</li>
+              <li><span class="font-semibold text-white">Tầng 3 (Rung động):</span> Những tình cảm cá nhân trong sáng, văn minh và không làm ảnh hưởng đến hai tầng nền tảng.</li>
+            </ul>
+          </div>
+        `
+      },
+      'problem-1': {
+        icon: '📚',
+        badge: 'Vấn đề 01 • Học tập & Thời gian',
+        title: 'Mất Cân Bằng Giữa Tình Cảm Và Nhiệm Vụ Học Tập',
+        html: `
+          <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+            <p class="font-bold text-rose-200 mb-1">• Biểu hiện &amp; Ý phụ:</p>
+            <p>Dành hàng giờ mỗi tối để nhắn tin, gọi video; trong giờ học thì mất tập trung, suy nghĩ mông lung; xem nhẹ việc củng cố kiến thức cơ bản.</p>
+          </div>
+          <div class="bg-amber-500/15 rounded-2xl p-4 border border-amber-300/30">
+            <p class="font-bold text-amber-200 mb-1">📌 Ví dụ thực tế:</p>
+            <p>Một bạn học sinh từng nằm trong nhóm học lực Giỏi của lớp nhưng từ khi vướng vào chuyện tình cảm, thường xuyên đi học muộn, quên làm bài tập về nhà và tụt hạng rõ rệt trong kỳ khảo sát chất lượng.</p>
+          </div>
+          <div class="bg-purple-500/15 rounded-2xl p-4 border border-purple-300/30">
+            <p class="font-bold text-purple-200 mb-1">💡 Ý mở rộng:</p>
+            <p>Kiến thức bậc THCS là chiếc chìa khóa mở cánh cửa trường THPT mơ ước. Đánh đổi tương lai học vấn lấy những cảm xúc nhất thời là cái giá quá đắt.</p>
+          </div>
+        `
+      },
+      'problem-2': {
+        icon: '🛡️',
+        badge: 'Vấn đề 02 • Kỹ năng & Ranh giới',
+        title: 'Thiếu Kỹ Năng Thiết Lập Ranh Giới & Kiến Thức Giới Tính',
+        html: `
+          <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+            <p class="font-bold text-purple-200 mb-1">• Biểu hiện &amp; Ý phụ:</p>
+            <p>Yêu theo cảm tính, dễ bị thuyết phục bởi những lời nói ngọt ngào mà thiếu kỹ năng tự bảo vệ bản thân và tôn trọng cơ thể.</p>
+          </div>
+          <div class="bg-amber-500/15 rounded-2xl p-4 border border-amber-300/30">
+            <p class="font-bold text-amber-200 mb-1">📌 Ví dụ thực tế:</p>
+            <p>Nhiều bạn ngại tìm hiểu kiến thức giáo dục giới tính chính thống, dẫn đến thiếu kỹ năng từ chối khi đối phương đưa ra những yêu cầu vượt quá giới hạn lứa tuổi học trò.</p>
+          </div>
+          <div class="bg-rose-500/15 rounded-2xl p-4 border border-rose-300/30">
+            <p class="font-bold text-rose-200 mb-1">💡 Ý mở rộng:</p>
+            <p>Tình yêu chân chính luôn đi kèm sự tôn trọng. Biết nói “Không” đúng lúc chính là biểu hiện của bản lĩnh và sự tự trọng.</p>
+          </div>
+        `
+      },
+      'problem-3': {
+        icon: '🌐',
+        badge: 'Vấn đề 03 • Không gian mạng',
+        title: 'Áp Lực Từ Mạng Xã Hội & Bạo Lực Tinh Thần',
+        html: `
+          <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+            <p class="font-bold text-amber-200 mb-1">• Biểu hiện &amp; Ý phụ:</p>
+            <p>Chia sẻ quá nhiều hình ảnh, tin nhắn riêng tư lên mạng; dễ trở thành tâm điểm bàn tán, chế giễu hoặc công kích của nhóm bạn xấu.</p>
+          </div>
+          <div class="bg-rose-500/15 rounded-2xl p-4 border border-rose-300/30">
+            <p class="font-bold text-rose-200 mb-1">📌 Ví dụ thực tế:</p>
+            <p>Khi mâu thuẫn xảy ra, một số bạn thiếu kiềm chế đã đăng bài nói xấu, tung tin nhắn riêng tư lên nhóm chat lớp, gây tổn thương tâm lý nặng nề cho người trong cuộc.</p>
+          </div>
+          <div class="bg-purple-500/15 rounded-2xl p-4 border border-purple-300/30">
+            <p class="font-bold text-purple-200 mb-1">💡 Ý mở rộng:</p>
+            <p>Không gian mạng không có nút “xóa hoàn toàn”. Giữ sự kín đáo và văn minh trên mạng xã hội là cách bảo vệ danh dự cho cả hai.</p>
+          </div>
+        `
+      },
+      'problem-4': {
+        icon: '🌉',
+        badge: 'Vấn đề 04 • Kết nối gia đình',
+        title: 'Khoảng Cách Thế Hệ Với Gia Đình & Thầy Cô',
+        html: `
+          <div class="bg-white/5 rounded-2xl p-4 border border-white/10">
+            <p class="font-bold text-pink-200 mb-1">• Biểu hiện &amp; Ý phụ:</p>
+            <p>Lo sợ bị mắng mỏ hoặc thu điện thoại nên học sinh chọn cách nói dối, giấu giếm, dẫn đến sự mất niềm tin giữa cha mẹ và con cái.</p>
+          </div>
+          <div class="bg-amber-500/15 rounded-2xl p-4 border border-amber-300/30">
+            <p class="font-bold text-amber-200 mb-1">📌 Ví dụ thực tế:</p>
+            <p>Khi bị phụ huynh phát hiện tin nhắn tình cảm, thay vì bình tĩnh giải thích, nhiều bạn phản ứng bằng cách khóa cửa phòng, bỏ ăn hoặc cãi lại gay gắt.</p>
+          </div>
+          <div class="bg-emerald-500/15 rounded-2xl p-4 border border-emerald-300/30">
+            <p class="font-bold text-emerald-200 mb-1">💡 Ý mở rộng:</p>
+            <p>Cha mẹ và thầy cô từng đi qua tuổi 15; sự lo lắng của người lớn xuất phát từ mong muốn bảo vệ tương lai cho chúng ta.</p>
+          </div>
+        `
+      },
+      'slide5-expand': {
+        icon: '🔍',
+        badge: 'Ví dụ & Phân tích • Nguyên nhân tâm lý',
+        title: 'Khi Gia Đình Thiếu Sự Lắng Nghe',
+        html: `
+          <p>Ở lứa tuổi lớp 9, áp lực điểm số và kỳ vọng của cha mẹ đôi khi khiến những cuộc trò chuyện trong bữa cơm gia đình chỉ xoay quanh chuyện điểm thi.</p>
+          <div class="bg-white/5 rounded-2xl p-4 border border-rose-300/30">
+            <p class="font-bold text-rose-200 mb-1">Hệ quả tâm lý:</p>
+            <p>Khi cảm thấy cô đơn ngay trong chính ngôi nhà của mình, học sinh dễ tìm đến một người bạn khác giới như một “chiếc phao cảm xúc”, dẫn đến sự phụ thuộc tình cảm quá mức và vội vàng.</p>
+          </div>
+        `
+      },
+      'slide6-expand': {
+        icon: '🎓',
+        badge: 'Bí quyết 9A1 • Chuyển hóa năng lượng',
+        title: 'Mô Hình “Tình Bạn Khác Giới Nâng Đỡ” Trước Kỳ Thi Lớp 10',
+        html: `
+          <div class="space-y-3">
+            <div class="bg-emerald-500/15 rounded-2xl p-4 border border-emerald-300/30">
+              <p class="font-bold text-emerald-200 mb-1">1. Biến nỗi nhớ thành mục tiêu học tập:</p>
+              <p>Cùng lập thời gian biểu ôn thi, trao đổi sổ tay công thức Toán – Tiếng Anh và kiểm tra bài cũ cho nhau vào 15 phút đầu giờ.</p>
+            </div>
+            <div class="bg-amber-500/15 rounded-2xl p-4 border border-amber-300/30">
+              <p class="font-bold text-amber-200 mb-1">2. Hẹn gặp nhau ở vạch đích:</p>
+              <p>Đặt lời hứa cùng nỗ lực hết mình để cả hai đều cầm trên tay giấy báo trúng tuyển ngôi trường THPT mơ ước — đó mới là kỷ niệm đẹp và tự hào nhất của tuổi 15!</p>
+            </div>
+          </div>
+        `
+      }
+    };
+
+    /* ------------------------------------------------------------------------
+       2. QUẢN LÝ TRẠNG THÁI SLIDE & ĐIỀU HƯỚNG
+       ------------------------------------------------------------------------ */
+    const slides = Array.from(document.querySelectorAll('.slide'));
+    const totalSlides = slides.length;
+    let currentSlide = 0;
+
+    const topProgressBar = document.getElementById('topProgressBar');
+    const slideCounter = document.getElementById('slideCounter');
+    const headerSectionName = document.getElementById('headerSectionName');
+    const bottomSlideTitle = document.getElementById('bottomSlideTitle');
+    const btnPrev = document.getElementById('btnPrev');
+    const btnNext = document.getElementById('btnNext');
+    const slideDotsNav = document.getElementById('slideDotsNav');
+    const overviewGrid = document.getElementById('overviewGrid');
+
+    // Khởi tạo chấm điều hướng trên thanh tiêu đề & lưới mục lục
+    function initNavigationUI() {
+      slideDotsNav.innerHTML = '';
+      overviewGrid.innerHTML = '';
+
+      slides.forEach((slide, idx) => {
+        const title = slide.dataset.title || `Trang ${idx + 1}`;
+
+        // Chấm tròn trên thanh top HUD
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.title = `${idx + 1}. ${title}`;
+        dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer bg-white/30 hover:bg-rose-300';
+        dot.addEventListener('click', () => goToSlide(idx));
+        slideDotsNav.appendChild(dot);
+
+        // Thẻ trong Modal Mục lục (G)
+        const card = document.createElement('button');
+        card.type = 'button';
+        card.className = 'overview-card glass-card rounded-2xl p-4 text-left hover:bg-rose-500/25 border-white/15 transition cursor-pointer flex flex-col justify-between';
+        card.innerHTML = `
+          <span class="text-xs font-extrabold text-rose-300 mb-1">SLIDE 0${idx + 1}</span>
+          <span class="text-sm font-bold text-white leading-snug">${title}</span>
+        `;
+        card.addEventListener('click', () => {
+          closeOverviewModal();
+          goToSlide(idx);
+        });
+        overviewGrid.appendChild(card);
+      });
+    }
+
+    function updatePresentationUI() {
+      slides.forEach((slide, idx) => {
+        slide.classList.remove('active', 'prev-exit');
+        if (idx === currentSlide) {
+          slide.classList.add('active');
+          slide.scrollTop = 0;
+        } else if (idx < currentSlide) {
+          slide.classList.add('prev-exit');
+        }
+      });
+
+      const currentTitle = slides[currentSlide].dataset.title || '';
+      const numFormatted = String(currentSlide + 1).padStart(2, '0');
+      const totalFormatted = String(totalSlides).padStart(2, '0');
+
+      slideCounter.textContent = `${numFormatted} / ${totalFormatted}`;
+      headerSectionName.textContent = currentTitle;
+      bottomSlideTitle.textContent = `${numFormatted}. ${currentTitle}`;
+
+      const progressPct = ((currentSlide + 1) / totalSlides) * 100;
+      topProgressBar.style.width = `${progressPct}%`;
+
+      btnPrev.disabled = currentSlide === 0;
+      btnNext.disabled = currentSlide === totalSlides - 1;
+
+      // Cập nhật chấm chỉ mục
+      const dots = slideDotsNav.querySelectorAll('button');
+      dots.forEach((dot, idx) => {
+        if (idx === currentSlide) {
+          dot.className = 'w-7 h-2.5 rounded-full transition-all duration-300 cursor-pointer bg-gradient-to-r from-rose-400 to-amber-300 shadow-sm';
+        } else {
+          dot.className = 'w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer bg-white/30 hover:bg-rose-300';
+        }
+      });
+
+      // Đánh dấu thẻ active trong mục lục
+      const ovCards = overviewGrid.querySelectorAll('.overview-card');
+      ovCards.forEach((card, idx) => {
+        if (idx === currentSlide) {
+          card.classList.add('border-rose-400', 'bg-rose-500/20');
+        } else {
+          card.classList.remove('border-rose-400', 'bg-rose-500/20');
+        }
+      });
+    }
+
+    function goToSlide(index) {
+      if (index < 0 || index >= totalSlides) return;
+      currentSlide = index;
+      updatePresentationUI();
+      if (currentSlide === totalSlides - 1) {
+        triggerCelebrationBurst();
+      }
+    }
+
+    function nextSlide() {
+      if (currentSlide < totalSlides - 1) {
+        goToSlide(currentSlide + 1);
+      }
+    }
+
+    function prevSlide() {
+      if (currentSlide > 0) {
+        goToSlide(currentSlide - 1);
+      }
+    }
+
+    /* ------------------------------------------------------------------------
+       3. TƯƠNG TÁC TAB GIẢI PHÁP (SLIDE 6) & TÌNH HUỐNG TRẮC NGHIỆM (SLIDE 7)
+       ------------------------------------------------------------------------ */
+    function filterSolutions(group) {
+      const tabs = document.querySelectorAll('.sol-tab');
+      tabs.forEach((tab) => {
+        if (tab.dataset.tab === group) {
+          tab.className = 'sol-tab active px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold bg-rose-500 text-white shadow-md transition cursor-pointer';
+        } else {
+          tab.className = 'sol-tab px-4 py-1.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 text-white/85 hover:bg-white/20 transition cursor-pointer';
+        }
+      });
+
+      const grid = document.getElementById('solutionsGrid');
+      const cards = document.querySelectorAll('.sol-card');
+
+      if (group === 'all') {
+        grid.className = 'grid grid-cols-1 md:grid-cols-3 gap-4 mb-4';
+        cards.forEach((c) => c.classList.remove('hidden'));
+      } else {
+        grid.className = 'grid grid-cols-1 max-w-2xl mx-auto gap-4 mb-4';
+        cards.forEach((c) => {
+          if (c.dataset.group === group) {
+            c.classList.remove('hidden');
+          } else {
+            c.classList.add('hidden');
+          }
+        });
+      }
+    }
+
+    function selectQuizOption(option) {
+      const feedbackBox = document.getElementById('quizFeedbackBox');
+      const feedbackIcon = document.getElementById('quizFeedbackIcon');
+      const feedbackTitle = document.getElementById('quizFeedbackTitle');
+      const feedbackText = document.getElementById('quizFeedbackText');
+
+      // Đặt lại viền 3 nút
+      ['A', 'B', 'C'].forEach((key) => {
+        const btn = document.getElementById(`quizBtn${key}`);
+        btn.classList.remove('ring-2', 'ring-rose-400', 'ring-purple-400', 'ring-emerald-400', 'bg-white/20');
+      });
+
+      const selectedBtn = document.getElementById(`quizBtn${option}`);
+      feedbackBox.classList.remove('hidden', 'border-rose-400', 'border-purple-400', 'border-emerald-400');
+
+      if (option === 'A') {
+        selectedBtn.classList.add('ring-2', 'ring-rose-400', 'bg-white/20');
+        feedbackBox.classList.add('border-rose-400');
+        feedbackIcon.textContent = '⚠️';
+        feedbackTitle.className = 'text-base sm:text-lg font-extrabold text-rose-300 mb-1';
+        feedbackTitle.textContent = 'Phân tích Phương án A: Cảm xúc lấn át lý trí';
+        feedbackText.textContent = 'Sự quan tâm của bạn rất chân thành nhưng thiếu tỉnh táo. Việc thức khuya kéo dài trước kỳ thi 1 tháng sẽ làm cả hai kiệt sức, giảm trí nhớ và ảnh hưởng trực tiếp tới kết quả thi vào lớp 10.';
+      } else if (option === 'B') {
+        selectedBtn.classList.add('ring-2', 'ring-purple-400', 'bg-white/20');
+        feedbackBox.classList.add('border-purple-400');
+        feedbackIcon.textContent = '🤔';
+        feedbackTitle.className = 'text-base sm:text-lg font-extrabold text-purple-300 mb-1';
+        feedbackTitle.textContent = 'Phân tích Phương án B: Bảo vệ thời gian nhưng thiếu tinh tế';
+        feedbackText.textContent = 'Bạn đã biết ưu tiên việc học, tuy nhiên cách từ chối lạnh lùng và tránh mặt đột ngột dễ khiến bạn ấy bị tổn thương tâm lý nặng nề hơn giữa giai đoạn áp lực thi cử.';
+      } else if (option === 'C') {
+        selectedBtn.classList.add('ring-2', 'ring-emerald-400', 'bg-white/20');
+        feedbackBox.classList.add('border-emerald-400');
+        feedbackIcon.textContent = '🏆';
+        feedbackTitle.className = 'text-base sm:text-lg font-extrabold text-emerald-300 mb-1';
+        feedbackTitle.textContent = 'Tuyệt vời! Phương án C — Lựa chọn bản lĩnh & tinh tế của 9A1';
+        feedbackText.textContent = 'Bạn vừa giữ được sự tôn trọng, thấu hiểu cảm xúc của đối phương, vừa thiết lập ranh giới thời gian khoa học để cả hai cùng giữ sức khỏe và bứt phá trong kỳ thi tuyển sinh lớp 10!';
+        triggerCelebrationBurst();
+        playGentleChime();
+      }
+    }
+
+    /* ------------------------------------------------------------------------
+       4. MODAL CHI TIẾT, MỤC LỤC & TOÀN MÀN HÌNH
+       ------------------------------------------------------------------------ */
+    const detailModal = document.getElementById('detailModal');
+    const overviewModal = document.getElementById('overviewModal');
+
+    function openDetailModal(key) {
+      const data = DETAIL_CONTENT[key];
+      if (!data) return;
+      document.getElementById('modalIcon').textContent = data.icon;
+      document.getElementById('modalBadge').textContent = data.badge;
+      document.getElementById('modalTitle').textContent = data.title;
+      document.getElementById('modalBody').innerHTML = data.html;
+
+      detailModal.classList.remove('hidden');
+      detailModal.classList.add('flex');
+    }
+
+    function closeDetailModal() {
+      detailModal.classList.add('hidden');
+      detailModal.classList.remove('flex');
+    }
+
+    function openOverviewModal() {
+      overviewModal.classList.remove('hidden');
+      overviewModal.classList.add('flex');
+    }
+
+    function closeOverviewModal() {
+      overviewModal.classList.add('hidden');
+      overviewModal.classList.remove('flex');
+    }
+
+    document.getElementById('btnOverview').addEventListener('click', openOverviewModal);
+
+    // Đóng modal khi click ra vùng nền mờ bên ngoài
+    detailModal.addEventListener('click', (e) => {
+      if (e.target === detailModal) closeDetailModal();
+    });
+    overviewModal.addEventListener('click', (e) => {
+      if (e.target === overviewModal) closeOverviewModal();
+    });
+
+    // Chế độ Toàn màn hình (Fullscreen)
+    function toggleFullscreen() {
+      try {
+        if (!document.fullscreenElement) {
+          document.documentElement.requestFullscreen().catch(() => {});
+        } else {
+          document.exitFullscreen().catch(() => {});
+        }
+      } catch (err) {
+        // Bỏ qua nếu trình duyệt nhúng hạn chế fullscreen
+      }
+    }
+
+    document.getElementById('btnFullscreen').addEventListener('click', toggleFullscreen);
+
+    // Âm thanh chuông chúc mừng nhẹ bằng Web Audio API (không cần file âm thanh ngoài)
+    function playGentleChime() {
+      try {
+        const AudioCtx = window.AudioContext || window.webkitAudioContext;
+        if (!AudioCtx) return;
+        const ctx = new AudioCtx();
+        const notes = [523.25, 659.25, 783.99, 1046.5];
+        notes.forEach((freq, i) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, ctx.currentTime + i * 0.09);
+          gain.gain.setValueAtTime(0.06, ctx.currentTime + i * 0.09);
+          gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + i * 0.09 + 0.55);
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.start(ctx.currentTime + i * 0.09);
+          osc.stop(ctx.currentTime + i * 0.09 + 0.6);
+        });
+      } catch (e) {
+        // Bỏ qua nếu thiết bị chặn âm thanh tự động
+      }
+    }
+
+    // Điều khiển bàn phím & vuốt cảm ứng (Swipe)
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeDetailModal();
+        closeOverviewModal();
+        return;
+      }
+
+      // Không chuyển slide nếu đang mở cửa sổ modal
+      if (!detailModal.classList.contains('hidden') || !overviewModal.classList.contains('hidden')) {
+        return;
+      }
+
+      if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+        e.preventDefault();
+        nextSlide();
+      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+        e.preventDefault();
+        prevSlide();
+      } else if (e.key.toLowerCase() === 'f') {
+        toggleFullscreen();
+      } else if (e.key.toLowerCase() === 'g') {
+        openOverviewModal();
+      }
+    });
+
+    // Hỗ trợ vuốt trái / phải trên thiết bị cảm ứng
+    let touchStartX = 0;
+    let touchStartY = 0;
+    document.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      touchStartY = e.changedTouches[0].screenY;
+    }, { passive: true });
+
+    document.addEventListener('touchend', (e) => {
+      if (!detailModal.classList.contains('hidden') || !overviewModal.classList.contains('hidden')) return;
+      const dx = e.changedTouches[0].screenX - touchStartX;
+      const dy = e.changedTouches[0].screenY - touchStartY;
+      if (Math.abs(dx) > 55 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+        if (dx < 0) nextSlide();
+        else prevSlide();
+      }
+    }, { passive: true });
+
+    // Hiệu ứng nghiêng thẻ 3D nhẹ khi di chuột (3D Tilt Hover)
+    function initTiltCards() {
+      const cards = document.querySelectorAll('.tilt-card');
+      cards.forEach((card) => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.transform = `perspective(900px) rotateY(${x * 5}deg) rotateX(${-y * 5}deg) translateY(-2px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = '';
+        });
+      });
+    }
+
+    /* ------------------------------------------------------------------------
+       5. NỀN CANVAS ĐỘNG: HOA ANH ĐÀO, BOKEH & TRÁI TIM PHA LÊ
+       ------------------------------------------------------------------------ */
+    const canvas = document.getElementById('sakuraCanvas');
+    const ctx = canvas.getContext('2d');
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const mouse = { x: width / 2, y: height / 2, active: false };
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+
+    window.addEventListener('mousemove', (e) => {
+      mouse.x = e.clientX;
+      mouse.y = e.clientY;
+      mouse.active = true;
+    });
+
+    // Cánh hoa anh đào rơi
+    class Petal {
+      constructor() {
+        this.reset(true);
+      }
+      reset(initial = false) {
+        this.x = Math.random() * width;
+        this.y = initial ? Math.random() * height : -20;
+        this.size = 7 + Math.random() * 9;
+        this.speedY = 0.65 + Math.random() * 1.1;
+        this.speedX = -0.4 + Math.random() * 0.8;
+        this.angle = Math.random() * Math.PI * 2;
+        this.spin = (Math.random() - 0.5) * 0.03;
+        this.swayPhase = Math.random() * Math.PI * 2;
+        this.opacity = 0.35 + Math.random() * 0.45;
+        const palette = ['#fda4af', '#fbcfe8', '#fecdd3', '#f9a8d4', '#fed7aa'];
+        this.color = palette[Math.floor(Math.random() * palette.length)];
+      }
+      update() {
+        this.swayPhase += 0.02;
+        this.y += this.speedY;
+        this.x += this.speedX + Math.sin(this.swayPhase) * 0.45;
+        this.angle += this.spin;
+
+        // Phản ứng nhẹ theo con trỏ chuột
+        if (mouse.active) {
+          const dx = this.x - mouse.x;
+          const dy = this.y - mouse.y;
+          const dist = Math.hypot(dx, dy);
+          if (dist < 130 && dist > 0) {
+            this.x += (dx / dist) * 0.9;
+            this.y += (dy / dist) * 0.4;
+          }
+        }
+
+        if (this.y > height + 25 || this.x < -30 || this.x > width + 30) {
+          this.reset(false);
+        }
+      }
+      draw() {
+        ctx.save();
+        ctx.translate(this.x, this.y);
+        ctx.rotate(this.angle);
+        ctx.globalAlpha = this.opacity;
+        ctx.fillStyle = this.color;
+        ctx.beginPath();
+        ctx.moveTo(0, -this.size * 0.5);
+        ctx.bezierCurveTo(this.size * 0.6, -this.size * 0.6, this.size * 0.7, this.size * 0.4, 0, this.size * 0.7);
+        ctx.bezierCurveTo(-this.size * 0.7, this.size * 0.4, -this.size * 0.6, -this.size * 0.6, 0, -this.size * 0.5);
+        ctx.fill();
+        ctx.restore();
+      }
+    }
+
+    // Đốm sáng Bokeh & Trái tim pha lê bay bổng
+    class BokehOrb {
+      constructor() {
+        this.x = Math.random() * width;
+        this.y = Math.random() * height;
+        this.r = 16 + Math.random() * 38;
+        this.vx = (Math.random() - 0.5) * 0.25;
+        this.vy = -0.15 - Math.random() * 0.25;
+        this.alpha = 0.05 + Math.random() * 0.09;
+        this.isHeart = Math.random() < 0.22;
+        const hues = ['251, 113, 133', '192, 132, 252', '253, 186, 116'];
+        this.rgb = hues[Math.floor(Math.random() * hues.length)];
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.y < -60) {
+          this.y = height + 60;
+          this.x = Math.random() * width;
+        }
+      }
+      draw() {
+        ctx.save();
+        if (this.isHeart) {
+          ctx.translate(this.x, this.y);
+          ctx.globalAlpha = this.alpha * 1.8;
+          ctx.strokeStyle = `rgba(${this.rgb}, 0.65)`;
+          ctx.lineWidth = 1.5;
+          const s = this.r * 0.45;
+          ctx.beginPath();
+          ctx.moveTo(0, s * 0.35);
+          ctx.bezierCurveTo(0, -s * 0.3, -s, -s * 0.3, -s, s * 0.35);
+          ctx.bezierCurveTo(-s, s * 0.85, 0, s * 1.25, 0, s * 1.5);
+          ctx.bezierCurveTo(0, s * 1.25, s, s * 0.85, s, s * 0.35);
+          ctx.bezierCurveTo(s, -s * 0.3, 0, -s * 0.3, 0, s * 0.35);
+          ctx.stroke();
+        } else {
+          const grad = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.r);
+          grad.addColorStop(0, `rgba(${this.rgb}, ${this.alpha})`);
+          grad.addColorStop(1, `rgba(${this.rgb}, 0)`);
+          ctx.fillStyle = grad;
+          ctx.beginPath();
+          ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2);
+          ctx.fill();
+        }
+        ctx.restore();
+      }
+    }
+
+    // Hạt pháo hoa giấy & trái tim bùng nổ khi chúc mừng
+    let celebrationParticles = [];
+
+    function triggerCelebrationBurst() {
+      const colors = ['#fb7185', '#f43f5e', '#fbbf24', '#c084fc', '#34d399', '#fff1f2'];
+      for (let i = 0; i < 65; i++) {
+        const angle = Math.random() * Math.PI * 2;
+        const speed = 3 + Math.random() * 7.5;
+        celebrationParticles.push({
+          x: width * (0.3 + Math.random() * 0.4),
+          y: height * (0.35 + Math.random() * 0.25),
+          vx: Math.cos(angle) * speed,
+          vy: Math.sin(angle) * speed - 2.5,
+          size: 5 + Math.random() * 6,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          life: 1,
+          decay: 0.012 + Math.random() * 0.012,
+          isHeart: i % 3 === 0
+        });
+      }
+    }
+
+    const petals = Array.from({ length: 34 }, () => new Petal());
+    const orbs = Array.from({ length: 18 }, () => new BokehOrb());
+
+    function animateCanvas() {
+      ctx.clearRect(0, 0, width, height);
+
+      orbs.forEach((orb) => {
+        orb.update();
+        orb.draw();
+      });
+
+      petals.forEach((petal) => {
+        petal.update();
+        petal.draw();
+      });
+
+      // Vẽ hạt pháo hoa chúc mừng nếu có
+      for (let i = celebrationParticles.length - 1; i >= 0; i--) {
+        const p = celebrationParticles[i];
+        p.x += p.vx;
+        p.y += p.vy;
+        p.vy += 0.14; // trọng lực nhẹ
+        p.life -= p.decay;
+
+        if (p.life <= 0) {
+          celebrationParticles.splice(i, 1);
+          continue;
+        }
+
+        ctx.save();
+        ctx.globalAlpha = Math.max(0, p.life);
+        ctx.fillStyle = p.color;
+        ctx.translate(p.x, p.y);
+        if (p.isHeart) {
+          const s = p.size * 0.65;
+          ctx.beginPath();
+          ctx.moveTo(0, s * 0.3);
+          ctx.bezierCurveTo(0, -s * 0.3, -s, -s * 0.3, -s, s * 0.3);
+          ctx.bezierCurveTo(-s, s * 0.8, 0, s * 1.2, 0, s * 1.45);
+          ctx.bezierCurveTo(0, s * 1.2, s, s * 0.8, s, s * 0.3);
+          ctx.bezierCurveTo(s, -s * 0.3, 0, -s * 0.3, 0, s * 0.3);
+          ctx.fill();
+        } else {
+          ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size * 0.65);
+        }
+        ctx.restore();
+      }
+
+      requestAnimationFrame(animateCanvas);
+    }
+
+    // Khởi chạy toàn bộ ứng dụng khi trang tải xong
+    window.onload = function () {
+      initNavigationUI();
+      updatePresentationUI();
+      initTiltCards();
+      animateCanvas();
+    };
+  </script>
+</body>
+</html>
